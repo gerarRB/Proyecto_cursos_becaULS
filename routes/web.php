@@ -1,11 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+   use Illuminate\Support\Facades\Route;
+   use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+   // Redirige la ruta raíz al login
+   Route::get('/', function () {
+       return redirect()->route('login');
+   });
 
-Auth::routes();
+   // Registra las rutas de autenticación
+   Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+   // Ruta para el home
+   Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

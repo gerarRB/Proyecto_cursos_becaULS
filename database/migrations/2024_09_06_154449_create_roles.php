@@ -15,6 +15,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+     
     public function up(): void
     {
         $role1 = Role::create(['name' => 'admin']);
